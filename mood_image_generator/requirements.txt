@@ -1,0 +1,7 @@
+openai>=1.0.0
+python-dotenv
+ipykernel
+numpy
+Pillow
+requests
+requirements.txt
