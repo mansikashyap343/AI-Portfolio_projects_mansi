@@ -99,5 +99,4 @@ You can change the style (anime, watercolor, oil painting, photorealistic) by ed
 - `mood_image_generator.ipynb` — main notebook  
 - `README.md` — documentation  
 
-## 🧩 Prompt Template Used
 
