@@ -1,137 +1,105 @@
-OCR + NLP Emotional & Personality Analyzer
+**Multimodal Emotional & Personality Analysis from Screenshots**
 
-A multimodal AI tool that reads screenshots, extracts text, and performs personality, sentiment, and emotion analysis, followed by a final AI-generated counselor-style summary.
+This project is a multimodal AI system that analyzes screenshots containing text (example: chat conversations) and produces emotional, sentiment, and personality insights, followed by an AI-generated counselor style summary. 
 
-1. Project Overview
+**Project Overview**
 
-This project demonstrates a complete multimodal AI pipeline:
+The system combines:
 
-User uploads a screenshot (chat/text message).
+Computer Vision (OCR)
 
-OCR extracts text using EasyOCR.
+NLP with Transformer models
 
-Transformer models perform:
+Classical Machine Learning
 
-Sentiment classification
+Rule-based AI interpretation
 
-Emotion classification (28-class)
+It simulates how an AI counselor might interpret emotional and personality signals from everyday text.
 
-A local classical ML model predicts Big Five personality traits using TF-IDF + Logistic Regression.
+**Features**
 
-A final AI counselor summary interprets:
+OCR text extraction from screenshots
 
-Emotional tone
+Sentiment analysis using RoBERTa
 
-Personality markers
+Emotion classification (28 emotion classes)
 
-Supportive insight
+Big Five personality prediction
 
-This project showcases integration of computer vision + NLP + classical ML + prompt-based interpretation.
+AI-generated counselor summary
 
-2. Features
+Beginner-friendly Google Colab workflow
 
-Extract text from screenshots using OCR
+**How It Works**
+**OCR Extraction**
 
-Analyze sentiment using a RoBERTa transformer model
+Text is extracted from uploaded screenshots using EasyOCR.
 
-Detect top emotions with a transformer-based emotion classifier
+**Sentiment & Emotion Analysis**
 
-Predict Big Five personality traits using a custom ML classifier
-
-Generate an AI counselor report combining all signals
-
-Simple, beginner-friendly workflow in Google Colab
-
-3. Tech Stack
-A. Computer Vision
-
-EasyOCR
-
-Pillow
-
-B. NLP Models
-
-Hugging Face Transformers
-
-RoBERTa sentiment model
-
-DistilRoBERTa emotion classifier
-
-C. Machine Learning
-
-TF-IDF Vectorizer
-
-Logistic Regression
-
-NumPy / scikit-learn
-
-D. Runtime
-
-Google Colab (file upload widget)
-
-4. How It Works
-4.1 Upload a Screenshot
-from google.colab import files
-uploaded = files.upload()
-image_path = list(uploaded.keys())[0]
-
-4.2 OCR Extraction
-ocr_reader = easyocr.Reader(['en'])
-results = ocr_reader.readtext(image_path, detail=0)
-extracted_text = " ".join(results)
-
-4.3 Sentiment & Emotion Analysis
-
-Models used:
+Transformer models used:
 
 cardiffnlp/twitter-roberta-base-sentiment
 
 j-hartmann/emotion-english-distilroberta-base
 
-sentiment = run_nlp(extracted_text, sentiment_model, sentiment_tokenizer, sentiment_labels)
-top_emotions = run_nlp(extracted_text, emotion_model, emotion_tokenizer, emotion_labels)
+**Personality Prediction**
 
-4.4 Personality Prediction (Custom ML Model)
+A custom classical ML pipeline:
 
-A small in-notebook dataset is used for proof-of-concept:
+TF-IDF Vectorizer
 
-vectorizer = TfidfVectorizer()
-personality_models = {...}
-personality = predict_personality(extracted_text)
+Logistic Regression
 
-4.5 AI Counselor Summary
+Predicts dominant Big Five traits
 
-A rule-based summary combines:
+**AI Counselor Summary**
 
-Sentiment
+A rule-based system synthesizes:
 
-Top emotion
+Emotional tone
 
-Dominant personality trait
+Personality indicators
 
-ai_summary = ai_counselor_summary(extracted_text, personality, sentiment, top_emotions)
+Supportive psychological insight
 
-5. Example Output
+**Example Output**
 
-Extracted Text:
-“Hey, what time is our reservation tonight?”
-"Hi! I got us a table for 7p.m."
-"Sounds good. See you soon"
+Sentiment: Positive
+Top Emotions: Joy, Relief, Approval
+Dominant Trait: Agreeableness
 
+**AI Counselor Insight**
 
-Sentiment:
-positive
+The message reflects warmth and cooperation, indicating emotional stability and positive social engagement.
 
-Top Emotions:
-joy, relief, approval
+**Tech Stack**
+Computer Vision
 
-Personality Pattern:
-Agreeableness dominant
+EasyOCR
 
-AI Counselor Summary (Sample):
+Pillow
 
-Emotional Tone: The message expresses joy with a positive sentiment.
+NLP
 
-Personality Indicators: The strongest trait is Agreeableness. The language reflects cooperation and warmth.
+Hugging Face Transformers
 
-Support Insight: The tone is relaxed and reassuring, indicating emotional stability.
+RoBERTa
+
+Machine Learning
+
+TF-IDF
+
+Logistic Regression
+
+scikit-learn
+
+Runtime
+
+Google Colab
+
+**Files**
+
+ocr_nlp_analyzer.ipynb — Main notebook
+
+README.md — Documentation
