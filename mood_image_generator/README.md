@@ -1,102 +1,82 @@
-# Mood-Based Image Generation
+**Mood-Based Image Generation with Stable Diffusion**
 
-This project generates AI images based on a user's mood using a fixed prompt template.  
-By entering a mood (e.g., *happy*, *calm*, *melancholic*, *romantic*), the notebook feeds the mood into a predefined prompt structure and produces an image that visually represents the emotion.
+This project generated AI images based on a user's emptional state while using a prompt template. By entering a single mood word (example: happy, calm, melancholic, sad etc), the system produces an AI-generated artwork that visually represents the very emotion. 
 
----
+**Project Idea**
 
-## 📌 Project Idea
+Many people experience emotions intensely but struggle to visualize them!!
+This project bridges that gap by translating abstract emotional states into concrete visual representations using generative AI.
 
-Many people feel emotions strongly but struggle to visualize them.  
-This project translates a **single mood word** into an **AI-generated artwork** using a consistent prompt template that ensures clarity, quality, and style control.
+A fixed prompt template ensures:
 
----
+stylistic consistency
 
-## ✨ Features
+high image quality
 
-- Mood-to-image generation using a fixed prompt structure  
-- Clean and simple user input  
-- Compatible with models like **Stable Diffusion / DALL·E**  
-- Saves output images automatically  
-- Easy to modify the default aesthetic or style  
+controlled aesthetic output
 
----
+**Features**
 
-## 🧠 How It Works
+Mood-to-image generation using prompt engineering
 
-1. User enters a mood → `"happy"`, `"calm"`, `"angry"`, etc.  
-2. Mood is inserted into a **template prompt**, such as:  
-   *"A highly detailed artistic illustration representing the mood: {mood}. Soft lighting, high resolution, cinematic atmosphere."*
-3. The image generation model produces an artwork based on the mood.
-4. The result is displayed and saved.
+Simple text-based user input
 
----
-# Mood-Based Image Generation
+Compatible with Stable Diffusion–based models
 
-This project generates AI images based on a user's mood using a fixed prompt template.  
-By entering a mood (e.g., *happy*, *calm*, *melancholic*, *romantic*), the notebook feeds the mood into a predefined prompt structure and produces an image that visually represents the emotion.
+Automatically displays and saves generated images
 
----
+Easy customization of artistic style and aesthetics
 
-## 📌 Project Idea
+**How It Works**
 
-Many people feel emotions strongly but struggle to visualize them.  
-This project translates a **single mood word** into an **AI-generated artwork** using a consistent prompt template that ensures clarity, quality, and style control.
+User inputs a mood (e.g., "happy", "calm", "angry")
 
----
+The mood is injected into a predefined prompt template
 
-## ✨ Features
+Stable Diffusion generates an image reflecting the emotion
 
-- Mood-to-image generation using a fixed prompt structure  
-- Clean and simple user input  
-- Compatible with models like **Stable Diffusion / DALL·E**  
-- Saves output images automatically  
-- Easy to modify the default aesthetic or style  
+The output image is displayed and saved locally
 
----
-
-## 🧠 How It Works
-
-1. User enters a mood → `"happy"`, `"calm"`, `"angry"`, etc.  
-2. Mood is inserted into a **template prompt**, such as:  
-   *"A highly detailed artistic illustration representing the mood: {mood}. Soft lighting, high resolution, cinematic atmosphere."*
-3. The image generation model produces an artwork based on the mood.
-4. The result is displayed and saved.
-
----
-
-## 🧩 Prompt Template Used
-
-"A detailed, cinematic, high-quality digital artwork that represents the mood: {mood}.
+**Prompt Template Used**
+"A detailed, cinematic, high-quality digital artwork that represents the mood: {mood}. 
 Vibrant colors, artistic composition, smooth textures, and dramatic lighting."
 
-yaml
-Copy code
 
-You can change the style (anime, watercolor, oil painting, photorealistic) by editing the template.
+You can easily modify the template to generate:
 
----
+anime-style art
 
-## 🚀 How to Run the Notebook
+watercolor paintings
 
-1. Install required libraries:
-   - diffusers / openai / stable diffusion (based on your model)
-   - torch
-   - pillow
-   - matplotlib
+oil paintings
 
-2. Open `mood_image_generator.ipynb`
+photorealistic images
 
-3. Run all cells:
-   - When prompted, enter a mood  
-   - The notebook generates and displays an image  
-   - The image is saved inside the notebook directory
+**How to Run**
 
----
+Install required dependencies:
 
-## 📁 Files in This Folder
+diffusers
 
-- `mood_image_generator.ipynb` — main notebook  
-- `README.md` — documentation  
+torch
+
+transformers
+
+pillow
+
+Open the notebook:
+
+ImageryTherapy_GITHUB_READY.ipynb
 
 
+Run all cells
+
+Enter a mood when prompted
+
+View and save the generated image
+
+**Files**
+
+ImageryTherapy_GITHUB_READY.ipynb — Main notebook
+
+README.md — Project documentation
