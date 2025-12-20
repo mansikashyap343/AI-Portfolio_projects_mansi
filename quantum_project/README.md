@@ -1,29 +1,61 @@
- Quantum Biomarker Classifier
+**Quantum Biomarker Classification using Variational Quantum Circuits**
 
-A hybrid quantum–classical machine learning model to classify synthetic health biomarkers (oxygen saturation & HRV).
+This project implelments a hybrid quantum-classical machine learning model to classify synthetic health biomarkers using Qiskit's Variational Quantum Classifier(VQC).
 
-Details
-
-This project demonstrates how quantum circuits can be used for binary medical classification.
-Using Qiskit’s Variational Quantum Classifier (VQC), it predicts whether a person is healthy or diseased based on two features:
+The model predicts whether an individual is healthy or diseased based on two features:
 
 Oxygen saturation (SpO₂)
 
 Heart Rate Variability (HRV)
 
-The project simulates a complete QML workflow:
+**Project Overview**
 
-Generate synthetic health data
+The project demonstrates a complete Quantum Machine Learning (QML) workflow, including:
 
-Prepare a quantum feature map
+Synthetic biomedical data generation
 
-Build a variational ansatz
+Quantum feature encoding
 
-Train with COBYLA optimizer
+Variational circuit design
 
-Evaluate performance on test split
+Hybrid optimization and training
 
-Tech Stack
+Model evaluation
+
+**How It Works**
+Data Generation
+
+Synthetic health data is generated to simulate medical conditions:
+
+Healthy Group
+
+SpO₂: 0.7 – 1.0
+
+HRV: 0.6 – 1.0
+
+Diseased Group
+
+SpO₂: 0.3 – 0.6
+
+HRV: 0.2 – 0.5
+
+Quantum Model
+
+Number of qubits: 2
+
+Feature Map: ZFeatureMap(2)
+
+Variational Ansatz: RealAmplitudes(2)
+
+Optimizer: COBYLA
+
+Classifier: Qiskit VQC
+
+**Results**
+
+The Variational Quantum Classifier successfully learns a clear separation between the synthetic biomarker classes. Training converges reliably with a stable loss value, demonstrating the feasibility of quantum approaches for medical classification tasks.
+
+**Tech Stack**
 
 Python
 
@@ -33,61 +65,18 @@ scikit-learn
 
 Qiskit
 
-ZFeatureMap
-
-RealAmplitudes
-
-Sampler
-
-VQC
-
-Files Included
-File	Description
-quantum.ipynb	Main notebook containing data generation, model building & training
-requirements.txt	All necessary dependencies
-assets/	Screenshots, small example images, or result illustrations
- How to Run
-1. Install dependencies
+**How to Run**
 pip install -r requirements.txt
 
-2. Run the notebook (Jupyter/Colab)
 
-You can open it in Colab instantly:
-File → Open Notebook → Upload
+Open and run:
 
- How It Works
- 1. Data
+quantum.ipynb
 
-Synthetic data is generated to simulate health conditions.
-Healthy group:
+**Files**
 
-O₂: 0.7–1.0
+quantum.ipynb — Main notebook
 
-HRV: 0.6–1.0
+requirements.txt — Dependencies
 
-Diseased group:
-
-O₂: 0.3–0.6
-
-HRV: 0.2–0.5
-
- 2. Quantum Model
-
-2 qubits
-
-ZFeatureMap(2) to encode two features
-
-RealAmplitudes(2) as trainable circuit
-
-COBYLA optimizer
-
-The classifier is trained using Qiskit’s VQC.
-
-Results
-
-The VQC typically learns clear separation between the synthetic biomarker classes.
-Training ends successfully with a converged loss value.
-
- Author
-
-Mansi — AI/ML student building hybrid quantum-AI systems.
+assets/ — Visuals and results
